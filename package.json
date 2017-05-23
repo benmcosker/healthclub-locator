@@ -8,9 +8,10 @@
   },
   "dependencies": {
     "enzyme": "^2.8.2",
+    "material-ui": "^0.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.5.4",
-    "superagent": "^3.5.2"
+    "react-material-icons": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
