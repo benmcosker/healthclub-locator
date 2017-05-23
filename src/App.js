@@ -1,53 +1,45 @@
 import React, { Component } from 'react';
-import superagent from 'superagent';
-
-class MessageListComponent extends Component {
-    render(){
-        return (
-            <div className="messageListContainter">
-                {this.props.messageList}
-            </div>
-        )
-    }
-}
+import Healthclubs from './Healclubs';
+import './App.css';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.getMessages = this.getMessages.bind(this);
-    }
-    state = {
-        messages: null
-    };
 
-    componentWillMount() {
-        this.getMessages().then((res) => {
-            this.setState({ messageList: res });
-            console.log("resp", this.state);
-        })
-    }
+    state = { clubs: [] };
+    componentDidMount() {
+        fetch('http://fe-test.preventure.com/api/v1/gyms')
+            .then((response) => response.json())
+            .then((data) => {
 
-    getMessages() {
-        return new Promise((resolve, reject) => {
-            superagent
-                .get('//fe-test.preventure.com/api/v1/gyms')
-                .set('Accept', 'application/json')
-                .set('Access-Control-Allow-Origin', '*')
-                .end((err, res) => {
-                    if (err) {
-                        reject('Error getting messages');
-                    } else {
-                        console.log("promise", res.text);
-                        resolve(res.text);
-                    }
-                });
-        });
+                this.setState({ clubs: data});
+
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }
 
     render() {
         return (
+
             <div className="App">
-                <MessageListComponent messageList={this.state.messageList} />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Country</th>
+                            <th>Longitude</th>
+                            <th>Latitude</th>
+                            <th>Chain</th>
+
+                        </tr>
+                    </thead>
+                    <Healthclubs clubs={this.state.clubs} />
+                </table>
             </div>
         );
     }
