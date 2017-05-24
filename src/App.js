@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Healthclubs from './Healthclubs';
+import Listing from './Listing';
 import Search from './Search';
 
-import './App.css';
+import './index.css';
 
 class App extends Component {
 
@@ -44,7 +44,7 @@ class App extends Component {
                     />
                 </MuiThemeProvider>
                 <MuiThemeProvider>
-                    <Healthclubs
+                    <Listing
                         clubs={this.state.clubs}
                         filter={this.state.filterText}
                     />
