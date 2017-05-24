@@ -5,22 +5,39 @@ import './index.css';
 
 export default ({clubs, filter}) => {
     const input = filter.toLowerCase();
+    let clubCity;
+    let clubZip;
 
-
-    const clubName = clubs.filter((club) => {
+    if (isNaN(filter)) {
+            clubCity = clubs.filter((club) => {
             return !club.city.toLowerCase().indexOf(input);
         })
-        .map((club, i) => {
-            return (
-                <Clubs
-                    info={club}
-                    key={i}
-                />
-            )
-        });
+            .map((club, i) => {
+                return (
+                    <Clubs
+                        info={club}
+                        key={i}
+                    />
+                )
+            });
+    } else {
+        clubZip = clubs.filter((club) => {
+            return !club.zip.indexOf(input);
+        })
+            .map((club, i) => {
+                return (
+                    <Clubs
+                        info={club}
+                        key={i}
+                    />
+                )
+            });
+    }
+
     return (
         <span>
-            {clubName}
+            {clubCity}
+            {clubZip}
         </span>
     )
 }

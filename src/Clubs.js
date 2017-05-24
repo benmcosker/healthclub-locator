@@ -9,7 +9,8 @@ export default ({info}) => (
             <p>{info.street}</p>
             <p>{info.city} {info.state}, {info.zip}</p>
             <p className="chain">
-                <strong>{info.is_chain.toString() === '1' ? 'Gym is part of a chain' : '' }</strong></p>
+                <strong>{info.is_chain.toString() === '1' ? 'Gym is part of a chain' : '' }</strong>
+            </p>
         </CardText>
     </Card>
 )
