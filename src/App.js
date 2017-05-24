@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Listing from './Listing';
 import Search from './Search';
-
 import './index.css';
 
 class App extends Component {
@@ -37,6 +36,9 @@ class App extends Component {
         return (
 
             <div className="App">
+                <div layout="row" layout-align="center center" titleStyle={{textAlign: "center"}}>
+                    <h2>Gym Listing</h2>
+                </div>
                 <MuiThemeProvider>
                     <Search
                         filterVal={this.state.filterText}
