@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Healthclubs from './Healthclubs';
+import Search from './Search';
 
 import './App.css';
 
 class App extends Component {
 
-    state = { clubs: [] };
+    constructor(props) {
+        super(props);
+        this.state = {
+            filterText: '',
+            clubs: []
+        }
+    }
+
+
+    filterUpdate(value) {
+        this.setState({
+            filterText: value
+        });
+    }
 
     componentDidMount() {
         fetch('http://fe-test.preventure.com/api/v1/gyms')
@@ -24,7 +38,16 @@ class App extends Component {
 
             <div className="App">
                 <MuiThemeProvider>
-                    <Healthclubs clubs={this.state.clubs} />
+                    <Search
+                        filterVal={this.state.filterText}
+                        filterUpdate={this.filterUpdate.bind(this)}
+                    />
+                </MuiThemeProvider>
+                <MuiThemeProvider>
+                    <Healthclubs
+                        clubs={this.state.clubs}
+                        filter={this.state.filterText}
+                    />
                 </MuiThemeProvider>
             </div>
         );
