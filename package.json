@@ -4,7 +4,8 @@
   "private": true,
   "devDependencies": {
     "json-server": "^0.10.1",
-    "react-scripts": "0.8.5"
+    "react-scripts": "0.8.5",
+    "fetch-mock": "^5.11.0"
   },
   "dependencies": {
     "enzyme": "2.8.2",

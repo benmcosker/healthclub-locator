@@ -34,7 +34,7 @@ h2 {
 }
 
 .google-map, .google-map a {
-  margin: 10px 0;
+  margin: 5px 0;
   color: #666666;
 }
 
@@ -47,6 +47,7 @@ h2 {
   height: 30px;
   margin: 20px 0 20px 15px;
   background-color: #fff;
+  border-radius: 4px !important;
 }
 
 .search-card  {
@@ -54,12 +55,14 @@ h2 {
   margin: 0 auto 30px;
   border: 2px solid #969696;
   background-color: #d8d8d8 !important;
+  border-radius: 6px !important;
 }
 .club-card {
   width: 50%;
   margin: 0 auto 30px;
   border: 2px solid #969696;
   background-color: #d8d8d8 !important;
+  border-radius: 6px !important;
 }
 
 .search-icon {
@@ -69,6 +72,7 @@ h2 {
 
 .chain {
   margin-top: 10px;
+  color: #000;
 }
 label {
   display: none;

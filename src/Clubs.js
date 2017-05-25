@@ -15,7 +15,7 @@ export default ({info}) => (
                 <p className="chain">
                     <strong>{info.is_chain.toString() === '1' ? 'Gym is part of a chain' : '' }</strong>
                 </p>
-                <p className="google-map"><a href={`https://www.google.com/maps/search/?api=1&query=${info.lat},${info.lon}`} target="_blank">Google Maps</a></p>
+                <p className="google-map"><a href={`https://www.google.com/maps/search/?api=1&query=${info.lat},${info.lon}`} target="_blank">Find on Map</a></p>
             </CardText>
         </Card>
     </MuiThemeProvider>
