@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Listing from './Listing';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Search from './Search';
 import './index.css';
 
