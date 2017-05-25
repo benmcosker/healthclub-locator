@@ -10,7 +10,7 @@ export default ({info}) => (
             <p className="chain">
                 <strong>{info.is_chain.toString() === '1' ? 'Gym is part of a chain' : '' }</strong>
             </p>
-            <p><a href={`http://maps.google.com/maps?z=12&t=m&q=${info.name}:${info.lat}+${info.lon}`} target="_blank">Google Maps</a></p>
+            <p><a href={`https://www.google.com/maps/search/?api=1&query=${info.lat},${info.lon}`} target="_blank">Google Maps</a></p>
         </CardText>
     </Card>
 )

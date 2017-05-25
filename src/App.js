@@ -36,7 +36,7 @@ class App extends Component {
         return (
 
             <div className="App">
-                <div layout="row" layout-align="center center" titleStyle={{textAlign: "center"}}>
+                <div className={'header-align'}>
                     <h2>Gym Listing</h2>
                 </div>
                 <MuiThemeProvider>

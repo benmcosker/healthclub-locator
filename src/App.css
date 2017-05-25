@@ -1,9 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-@fontface {
-    font-family: 'Montserrat', sans-serif;
-    src: url('https://fonts.googleapis.com/css?family=Montserrat')
-}
-
-body {
+html, body, .App, .club-card {
     font-family: 'Montserrat', sans-serif !important;
 }

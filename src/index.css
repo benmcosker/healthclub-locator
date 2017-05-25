@@ -20,6 +20,10 @@ h2 {
   margin-top: -25px;
 }
 
+.header-align {
+  text-align: center;
+}
+
 .title-spacing span{
   line-height: 24px !important;
 }
